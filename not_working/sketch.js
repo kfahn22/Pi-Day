@@ -4,8 +4,9 @@ let hit = false;
 let w = 400;
 let h = 400;
 let t = 50;
-let n = 16;
-let r = 10;
+let n = 4;
+//let r = 10;
+let s = 10;
 const poly = Array(16).fill(); // stores the vertices for our polygon.
 let columns = []; // create an array of lines to check for intersections
 let polygons = []; // create an array of polygons
@@ -19,6 +20,7 @@ let pieDiv;
 function setup() {
     createCanvas(w, h);
     background(0);
+    rectMode(CENTER);
     collideDebug(true); // enable debug mode
 
     // Add lines
@@ -48,7 +50,7 @@ function draw() {
         let closest = round(x / t);
         let d = abs(closest * t - x);
 
-        
+        let r = s/(2*sin(180/n));
         let a = r * (cos(PI / n)); //apothem of polygon
         let len = min(r, a); 
         // console.log(r)
@@ -57,7 +59,7 @@ function draw() {
         console.log(d);
         console.log(len);
         if (d < r) {
-            //stroke(0, 255, 0, 50);
+            stroke(0, 255, 0, 50);
             fill(0, 255, 0,150);
             strokeWeight(0.1);
             intersecting++;
@@ -71,8 +73,8 @@ function draw() {
         push();
         translate(x, y);
         // stroke(255,0,0);
-        // rect(x,y,10,10)
-        polygon(x,y,r,n);
+        rect(x,y,10,10);
+        //polygon(x,y,r,n);
         pop();
     }
   
