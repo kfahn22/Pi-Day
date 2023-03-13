@@ -1,6 +1,6 @@
 # Pi Day Challenges
 
-# Variation of Daniel Shiffman';'s Coding Train Pi Day 2023 challenge  
+# Variation of Daniel Shiffman's Coding Train Pi Day 2023 challenge  
 
 ## Buffon's Needle with square
 
